@@ -7,14 +7,18 @@
 
 #include <iostream>
 
-using namespace std;
+#define ASSERT_ON
+#include "assertion.h"
 
-/*
- * 
- */
+
+void tests() {
+    //ASSERT(...);
+}
+
 int main(int argc, char** argv) {
 
-    std::cout << "Hello World" << std::endl;
+    tests(); // lance les tests
+    
     return 0;
 }
 
