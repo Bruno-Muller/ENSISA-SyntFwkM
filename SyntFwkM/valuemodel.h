@@ -8,6 +8,8 @@
 #ifndef VALUEMODEL_H
 #define	VALUEMODEL_H
 
+#include "expression.h"
+
 namespace core {
 
     template <class T>

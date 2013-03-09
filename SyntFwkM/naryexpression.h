@@ -8,6 +8,8 @@
 #ifndef NARYEXPRESSION_H
 #define	NARYEXPRESSION_H
 
+#include "expression.h"
+
 namespace core {
 
     template <class T>

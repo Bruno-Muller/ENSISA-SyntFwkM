@@ -6,8 +6,10 @@
                    projectFiles="true">
       <itemPath>assertion.h</itemPath>
       <itemPath>expression.h</itemPath>
+      <itemPath>naryexpression.h</itemPath>
       <itemPath>unaryexpression.h</itemPath>
       <itemPath>unaryexpressionmodel.h</itemPath>
+      <itemPath>unaryshadowexpression.h</itemPath>
       <itemPath>valuemodel.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
