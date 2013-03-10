@@ -15,7 +15,7 @@ namespace core {
     template <class T>
     class UnaryExpression {
     public:
-        virtual T& evaluate(const Expression<T>& o) const=0;
+        virtual T evaluate(const Expression<T>& o) const=0;
     };  
     
 }

@@ -16,8 +16,8 @@ namespace core {
     template <class T>
     class UnaryExpressionModel : Expression<T>, UnaryExpression<T> {
     public:
-        virtual T& evalutate() const;
-        virtual T& evaluate(const Expression<T>& o) const;
+        virtual T evalutate() const;
+        virtual T evaluate(const Expression<T>& o) const;
 
     private:
         UnaryExpression<T>& m_operator;
@@ -25,13 +25,13 @@ namespace core {
     };
 
     template <class T>
-    T& UnaryExpressionModel<T>::evalutate() const {
+    T UnaryExpressionModel<T>::evalutate() const {
         if (&m_operand != 0)
             return evaluate(m_operand);
     }
 
     template <class T>
-    T& UnaryExpressionModel<T>::evaluate(const Expression<T>& o) const {
+    T UnaryExpressionModel<T>::evaluate(const Expression<T>& o) const {
         if (&m_operator != 0)
             return m_operator.evaluate(o);
     }

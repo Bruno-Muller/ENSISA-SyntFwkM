@@ -16,14 +16,14 @@ namespace core {
     template <class T>
     class UnaryShadowExpression : UnaryExpression<T> {
     public:
-        virtual T& evaluate(const Expression<T>& o) const=0;
+        virtual T evaluate(const Expression<T>& o) const=0;
     private:
         UnaryExpression<T>& m_target;
             
     };  
     
     template <class T>
-    T& UnaryShadowExpression<T>::evaluate(const Expression<T>& o) const {
+    T UnaryShadowExpression<T>::evaluate(const Expression<T>& o) const {
         if (&m_target != 0) {
             return m_target.evaluate(o);
         }

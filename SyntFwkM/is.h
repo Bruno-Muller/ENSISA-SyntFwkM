@@ -13,7 +13,7 @@ namespace fuzzy {
     template <class T>
     class Is : core::UnaryExpression<T>  {
     public:
-        virtual T& evaluate(const core::Expression<T>& o) const=0;
+        virtual T evaluate(const core::Expression<T>& o) const=0;
     };  
     
 }
