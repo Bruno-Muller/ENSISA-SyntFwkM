@@ -12,30 +12,30 @@
 #include "unaryexpression.h"
 
 namespace core {
-    
+
     template <class T>
-    class UnaryExpressionModel : Expression, UnaryExpression {
-        public:
-            virtual T evalutate() const;
-            virtual T evaluate(Expression) const;
-            
-            private:
-                UnaryExpression m_operator;
-                Expression m_operand;
+    class UnaryExpressionModel : Expression<T>, UnaryExpression<T> {
+    public:
+        virtual T& evalutate() const;
+        virtual T& evaluate(const Expression<T>& o) const;
+
+    private:
+        UnaryExpression<T>& m_operator;
+        Expression<T>& m_operand;
     };
-    
+
     template <class T>
-    T UnaryExpressionModel<T>::evalutate() const {
-        if (m_operand != 0)
+    T& UnaryExpressionModel<T>::evalutate() const {
+        if (&m_operand != 0)
             return evaluate(m_operand);
     }
-    
+
     template <class T>
-    T UnaryExpressionModel<T>::evaluate(Expression o) const {
-        if (m_operator != 0)
-                return m_operator.evaluate(o);
+    T& UnaryExpressionModel<T>::evaluate(const Expression<T>& o) const {
+        if (&m_operator != 0)
+            return m_operator.evaluate(o);
     }
-    
+
 }
 
 #endif	/* UNARYEXPRESSIONMODEL_H */

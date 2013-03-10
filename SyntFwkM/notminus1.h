@@ -16,11 +16,11 @@ namespace fuzzy {
     template <class T>
     class NotMinus1 {
     public:
-        virtual T evaluate(core::Expression) const;
+        virtual T& evaluate(const core::Expression<T>& o) const;
     };
     
     template <class T>
-    T NotMinus1::evaluate(core::Expression) const {
+    T& NotMinus1<T>::evaluate(const core::Expression<T>& o) const {
         return 0;
     }
     

@@ -13,7 +13,7 @@ namespace core {
     template <class T>
     class Expression {
         public:
-            virtual T evalutate() const=0;
+            virtual T& evalutate() const=0;
     };
     
 }
