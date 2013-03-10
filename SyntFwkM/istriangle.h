@@ -9,6 +9,7 @@
 #define	ISTRIANGLE_H
 
 #include "expression.h"
+#include "is.h"
 
 
 namespace fuzzy {

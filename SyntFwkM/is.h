@@ -8,6 +8,9 @@
 #ifndef IS_H
 #define	IS_H
 
+#include "expression.h"
+#include "unaryexpression.h"
+
 namespace fuzzy {
 
     template <class T>

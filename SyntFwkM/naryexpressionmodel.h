@@ -17,23 +17,23 @@ namespace core {
     class NaryExpressionModel : Expression<T>, NaryExpression<T> {
     public:
         virtual T evalutate() const;
-        virtual T evaluate(const Expression<T>& o) const;
+        virtual T evaluate(const Expression<T> operands[]) const;
 
     private:
         NaryExpression<T>& m_operator;
-        Expression<T>& m_operand;
+        Expression<T> m_operands[];
     };
 
     template <class T>
     T NaryExpressionModel<T>::evalutate() const {
-        if (&m_operand != 0)
-            return evaluate(m_operand);
+        if (&m_operands != 0)
+            return evaluate(m_operands);
     }
 
     template <class T>
-    T NaryExpressionModel<T>::evaluate(const Expression<T>& o) const {
+    T NaryExpressionModel<T>::evaluate(const Expression<T> operands[]) const {
         if (&m_operator != 0)
-            return m_operator.evaluate(o);
+            return m_operator.evaluate(operands);
     }
 
 }

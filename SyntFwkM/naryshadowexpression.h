@@ -8,11 +8,27 @@
 #ifndef NARYSHADOWEXPRESSION_H
 #define	NARYSHADOWEXPRESSION_H
 
+#include "expression.h"
+#include "naryexpression.h"
+
 namespace core {
     
-    class NaryShadowExpression {
-        
+    template <class T>
+    class NaryShadowExpression : NaryExpression<T> {
+    public:
+        virtual T evaluate(const Expression<T> operands[]) const;
+    private:
+        NaryExpression<T>& m_target;
     };
+    
+    template <class T>
+    T NaryShadowExpression<T>::evaluate(const Expression<T> operands[]) const {
+        if (&m_target != 0) {
+            return m_target.evaluate(operands);
+        }
+    }
+    
+    
 }
 
 
