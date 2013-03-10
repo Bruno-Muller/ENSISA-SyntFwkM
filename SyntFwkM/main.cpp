@@ -23,6 +23,9 @@
 #include "not.h"
 #include "notminus1.h"
 
+#include "is.h"
+#include "istriangle.h"
+
 void tests() {
     //ASSERT(...);
     //core::Expression<int> expr;

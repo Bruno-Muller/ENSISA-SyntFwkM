@@ -14,7 +14,7 @@
 namespace fuzzy {
 
     template <class T>
-    class NotMinus1 {
+    class NotMinus1 : Not<T> {
     public:
         virtual T& evaluate(const core::Expression<T>& o) const;
     };
