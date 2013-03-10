@@ -7,7 +7,7 @@
       <itemPath>assertion.h</itemPath>
       <itemPath>expression.h</itemPath>
       <itemPath>expressionfactory.h</itemPath>
-      <itemPath>fuzzyfactory.h</itemPath>
+      <itemPath>fuzzyexpressionfactory.h</itemPath>
       <itemPath>is.h</itemPath>
       <itemPath>istriangle.h</itemPath>
       <itemPath>naryexpression.h</itemPath>

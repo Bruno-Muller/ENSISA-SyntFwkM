@@ -29,7 +29,7 @@
 #include "istriangle.h"
 
 #include "expressionfactory.h"
-#include "fuzzyfactory.h"
+#include "fuzzyexpressionfactory.h"
 
 void tests() {
     //ASSERT(...);
@@ -41,17 +41,21 @@ int main(int argc, char** argv) {
     
     //Operators
     fuzzy::NotMinus1<int> opNot;
-    //AndMin opAnd;
-    //OrMax opOr;
-    //ThenMin opThen;
-    //CogDefuzz opDefuzz;
+    //fuzzy::AndMin<int> opAnd;
+    //fuzzy::OrMax<int> opOr;
+    //fuzzy::ThenMin<int> opThen;
+    //fuzzy::CogDefuzz<int> opDefuzz;
     
     //fuzzy expession factory
     //FuzzyExpressionFactory f(&opNot,&opAnd,&opOr,&opThen,&opOr,&opDefuzz);
     
     //membership function
-    //IsTriangle poor(-5,0,5); IsTriangle good(0,5,10); IsTriangle excellent(5,10,15);
-    //IsTriangle cheap(0,5,10); IsTriangle average(10,15,20); IsTriangle generous(20,25,30);
+    fuzzy::IsTriangle<int> poor(-5,0,5);
+    fuzzy::IsTriangle<int> good(0,5,10);
+    fuzzy::IsTriangle<int> excellent(5,10,15);
+    fuzzy::IsTriangle<int> cheap(0,5,10);
+    fuzzy::IsTriangle<int> average(10,15,20);
+    fuzzy::IsTriangle<int> generous(20,25,30);
         
     //values
     //Value service(,0); Value food(0); Value tips(0);
