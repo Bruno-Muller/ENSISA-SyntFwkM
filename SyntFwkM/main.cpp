@@ -19,6 +19,8 @@
 #include "valuemodel.h"
 
 #include "naryexpression.h"
+#include "naryexpressionmodel.h"
+#include "naryshadowexpression.h"
 
 #include "not.h"
 #include "notminus1.h"
@@ -26,14 +28,19 @@
 #include "is.h"
 #include "istriangle.h"
 
+#include "expressionfactory.h"
+#include "fuzzyfactory.h"
+
 void tests() {
     //ASSERT(...);
-    //core::Expression<int> expr;
 }
 
 int main(int argc, char** argv) {
 
     tests(); // lance les tests
+    
+    // Operators
+    fuzzy::NotMinus1<int> opNot;
     
     return 0;
 }

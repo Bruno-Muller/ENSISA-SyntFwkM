@@ -6,9 +6,12 @@
                    projectFiles="true">
       <itemPath>assertion.h</itemPath>
       <itemPath>expression.h</itemPath>
+      <itemPath>expressionfactory.h</itemPath>
       <itemPath>is.h</itemPath>
       <itemPath>istriangle.h</itemPath>
       <itemPath>naryexpression.h</itemPath>
+      <itemPath>naryexpressionmodel.h</itemPath>
+      <itemPath>naryshadowexpression.h</itemPath>
       <itemPath>not.h</itemPath>
       <itemPath>notminus1.h</itemPath>
       <itemPath>unaryexpression.h</itemPath>
@@ -36,6 +39,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>fuzzyfactory.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
