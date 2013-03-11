@@ -35,7 +35,7 @@ namespace fuzzy {
 
     template <class T>
     T IsTriangle<T>::evaluate(const core::Expression<T>& o) const {
-        return o.evalutate(); // TODO
+        return o.evaluate(); // TODO
     }
 
 }

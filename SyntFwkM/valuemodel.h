@@ -15,12 +15,19 @@ namespace core {
     template <class T>
     class ValueModel : Expression<T> {
     public:
+        ValueModel(const T& v);
         virtual T evaluate() const;
         virtual void setValue(const T& v);
 
     private:
         T m_value;
     };
+    
+    template <class T>
+    ValueModel<T>::ValueModel(const T& v) :
+    m_value(v)
+    {
+    }
     
     template <class T>
     T ValueModel<T>::evaluate() const {

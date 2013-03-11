@@ -58,7 +58,9 @@ int main(int argc, char** argv) {
     fuzzy::IsTriangle<int> generous(20,25,30);
         
     //values
-    //Value service(,0); Value food(0); Value tips(0);
+    core::ValueModel<int> service(0);
+    core::ValueModel<int> food(0);
+    core::ValueModel<int> tips(0);
     
     //Expression *r =
     //        f.NewAgg(
