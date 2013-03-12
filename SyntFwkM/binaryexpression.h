@@ -17,9 +17,6 @@ namespace core {
     	T l=left->evaluate();
     	T r=right->evaluate();
     }
-
-
-    
 }
 
 #endif	/* BINARYEXPRESSION_H */
