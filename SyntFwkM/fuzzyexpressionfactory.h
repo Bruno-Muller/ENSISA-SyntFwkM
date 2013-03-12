@@ -16,7 +16,7 @@
 namespace fuzzy {
     
     template <class T>
-    class FuzzyExpressionFactory : core::ExpressionFactory {
+    class FuzzyExpressionFactory : core::ExpressionFactory<T> {
     public:
         virtual core::Expression<T>* NewAnd(const core::Expression<T>* l, const core::Expression<T>* r);
         virtual core::Expression<T>* NewOr(const core::Expression<T>* l, const core::Expression<T>* r);
@@ -24,7 +24,7 @@ namespace fuzzy {
         virtual core::Expression<T>* NewAgg(const core::Expression<T>* l, const core::Expression<T>* r);
         virtual core::Expression<T>* NewDefuzz(const core::Expression<T>* l, const core::Expression<T>* r);
         virtual core::Expression<T>* NewNot(const core::Expression<T>* o);
-        virtual core::Expression<T>* NewIs(const core::Is<T>* is, const core::Expression<T>* o);
+        virtual core::Expression<T>* NewIs(const fuzzy::Is<T>* is, const core::Expression<T>* o);
         
         //virtual void ChangeAnd(const And<T>* o);
         //virtual void ChangeOr(const Or<T>* o);
@@ -34,7 +34,8 @@ namespace fuzzy {
         //virtual void ChangeNot(const Not<T>* o);
         //virtual void ChangeIs(const Is<T>* o);
     private:
-        //
+        //core::BinaryShadowExpression<T> *m_and, *m_or, *m_then, *m_agg, *m_defuzz, *m_is;
+        core::UnaryShadowExpression<T>* m_not;
        
     };
 }

@@ -5,6 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>assertion.h</itemPath>
+      <itemPath>binaryexpression.h</itemPath>
+      <itemPath>binaryexpressionmodel.h</itemPath>
       <itemPath>expression.h</itemPath>
       <itemPath>expressionfactory.h</itemPath>
       <itemPath>fuzzyexpressionfactory.h</itemPath>
