@@ -18,13 +18,13 @@ namespace core {
     public:
         virtual T evaluate(const Expression<T> operands[]) const;
     private:
-        NaryExpression<T>& m_target;
+        NaryExpression<T>* m_target;
     };
     
     template <class T>
     T NaryShadowExpression<T>::evaluate(const Expression<T> operands[]) const {
-        if (&m_target != 0) {
-            return m_target.evaluate(operands);
+        if (m_target != 0) {
+            return m_target->evaluate(operands);
         }
     }
     

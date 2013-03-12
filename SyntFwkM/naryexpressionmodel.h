@@ -20,20 +20,20 @@ namespace core {
         virtual T evaluate(const Expression<T> operands[]) const;
 
     private:
-        NaryExpression<T>& m_operator;
-        Expression<T> m_operands[];
+        NaryExpression<T>* m_operator;
+        Expression<T>* m_operands[];
     };
 
     template <class T>
     T NaryExpressionModel<T>::evalutate() const {
-        if (&m_operands != 0)
+        if (m_operands != 0)
             return evaluate(m_operands);
     }
 
     template <class T>
     T NaryExpressionModel<T>::evaluate(const Expression<T> operands[]) const {
-        if (&m_operator != 0)
-            return m_operator.evaluate(operands);
+        if (m_operator != 0)
+            return m_operator->evaluate(operands);
     }
 
 }
