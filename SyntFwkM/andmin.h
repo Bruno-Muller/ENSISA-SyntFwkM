@@ -18,7 +18,7 @@ namespace fuzzy
     {
         public:
             virtual ~AndMin() {};
-            virtual T  evaluate(const core::Expression<T>*, const Expression<T>*)const;
+            virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
     };
     
     template <class T>
