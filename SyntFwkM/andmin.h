@@ -14,15 +14,15 @@
 namespace fuzzy
 {
     template <class T>
-    class Andmin : public And<T>
+    class AndMin : public And<T>
     {
         public:
-            virtual ~Andmin() {};
+            virtual ~AndMin() {};
             virtual T  evaluate(const core::Expression<T>*, const Expression<T>*)const;
     };
     
     template <class T>
-    T Andmin<T>::evaluate(core::Expression<T>* left, core::Expression<T>* right) const
+    T AndMin<T>::evaluate(core::Expression<T>* left, core::Expression<T>* right) const
     {
         T l = left->evaluate();
         T r = right->evaluate();
