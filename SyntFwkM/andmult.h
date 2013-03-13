@@ -18,11 +18,11 @@ namespace fuzzy
     {
         public:
             virtual ~AndMult() {};
-            virtual T evaluate(const core::Expression<T>*, const Expression<T>*)const;          
+            virtual T evaluate(const core::Expression<T>*, const core::Expression<T>*)const;          
     };
     
     template <class T>
-    T AndMult<T>::evaluate(core::Expression<T>* left, core::Expression<T>* right) const
+    T AndMult<T>::evaluate(const core::Expression<T>* left,const core::Expression<T>* right) const
     {
         T l = left->evaluate();
         T r = right->evaluate();

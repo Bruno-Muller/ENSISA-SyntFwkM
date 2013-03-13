@@ -22,7 +22,7 @@ namespace fuzzy
     };
     
     template <class T>
-    T OrMax<T>::evaluate(core::Expression<T>* left, core::Expression<T>* right) const
+    T OrMax<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
         T l = left->evaluate();
         T r = right->evaluate();
