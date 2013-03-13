@@ -28,10 +28,11 @@ namespace core {
     }
 
     template <class T>
-    T BinaryExpressionModel<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const;
+    T BinaryExpressionModel<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const
+    {
         if (&m_operator != 0)
             return m_operator.evaluate(l,r);
-
+    }
 }
 
 #endif
