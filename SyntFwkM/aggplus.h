@@ -30,5 +30,6 @@ namespace fuzzy
     }
 }
 
-#endif	/* AGGPLUS_H */
+
+#endif 	/* AGGPLUS_H */
 
