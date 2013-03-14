@@ -18,18 +18,23 @@ namespace fuzzy
     {
         public:
             virtual ~ThenMult() {};
-            virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
+            virtual T evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
+            virtual T premiseValue();
         private:
-            const pre
+            const T premiseValue; 
                 
     };
     
     template <class T>
     T ThenMult<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
-        T l = left->evaluate();
-        T r = right->evaluate();
-        return l*r;
+        //TODO
+    }
+    
+    template <class T>
+    T ThenMult<T>::premiseValue
+    {
+        //TODO
     }
 }
 
