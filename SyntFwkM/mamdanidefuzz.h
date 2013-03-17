@@ -15,7 +15,8 @@ namespace fuzzy
     template <class T>
     class Mamdanidefuzz : public BinaryExpression<T>
     {
-        
+        public:
+            virtual ~Mamdanidefuzz() {};        
     };
 }
 
