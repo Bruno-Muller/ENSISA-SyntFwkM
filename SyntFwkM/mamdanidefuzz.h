@@ -16,8 +16,15 @@ namespace fuzzy
     class Mamdanidefuzz : public BinaryExpression<T>
     {
         public:
-            virtual ~Mamdanidefuzz() {};        
+            virtual ~Mamdanidefuzz() {};
+            virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
     };
+    
+        template <class T>
+    T Mamdanidefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
+    {
+        /*TODO*/
+    }
 }
 
 
