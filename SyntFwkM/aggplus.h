@@ -29,7 +29,5 @@ namespace fuzzy
         return l+r;
     }
 }
-
-
 #endif 	/* AGGPLUS_H */
 
