@@ -12,6 +12,7 @@
 #include "expressionfactory.h"
 #include "is.h"
 #include "unaryshadowexpression.h"
+//#include "binaryshadoweExpression.h"
 
 namespace fuzzy {
     

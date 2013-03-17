@@ -22,7 +22,7 @@ namespace fuzzy {
     template <class T>
     T NotMinus1<T>::evaluate(const core::Expression<T>* o) const {
         T t = o->evaluate();
-        return ((~t) - 1 );
+        return t; // TODO
     }
     
 }
