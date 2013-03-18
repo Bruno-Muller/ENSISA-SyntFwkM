@@ -13,7 +13,7 @@
 namespace fuzzy
 {
     template <class T>
-    class Mamdanidefuzz : public BinaryExpression<T>
+    class Mamdanidefuzz : public core::BinaryExpression<T>
     {
         public:
             virtual ~Mamdanidefuzz() {};
