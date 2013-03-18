@@ -24,10 +24,10 @@ namespace fuzzy
     };
     
     template <class T>
-    IsTrapezeLeft<T>::IsTrapezeLeft(const T& min, const T& max)
+    IsTrapezeLeft<T>::IsTrapezeLeft(const T& min, const T& max):
+        m_min(min),
+        m_max(max)
     {
-        m_min(min);
-        m_max(max);
     }
     
     template <T>

@@ -24,12 +24,12 @@ namespace fuzzy
     };
     
     template <class T>
-    IsTrapeze<T>::IsTrapeze(const T& min, const T& mid, const T& max, const T& lenght)
+    IsTrapeze<T>::IsTrapeze(const T& min, const T& mid, const T& max, const T& lenght):
+        m_min(min),
+        m_mid(mid),
+        m_max(max),
+        m_lenght(lenght)
     {
-        m_min(min);
-        m_mid(mid);
-        m_max(max);
-        m_lenght(lenght);
     }
     
     template <T>

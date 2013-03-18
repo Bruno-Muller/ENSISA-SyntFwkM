@@ -10,6 +10,7 @@
 
 #include "expression.h"
 #include "is.h"
+#include <math.h>
 
 namespace fuzzy
 {
@@ -24,17 +25,18 @@ namespace fuzzy
     };
     
     template<class T>
-    IsBell<T>::IsBell(const T& a, const T& b, const T& c)
+    IsBell<T>::IsBell(const T& a, const T& b, const T& c): 
+        m_a(a),
+        m_b(b),
+        m_c(c)
     {
-        m_a(a);
-        m_b(b);
-        m_c(c);
     }
     
     template<class T>
     T IsBell<T>::evaluate(const core::Expression<T>* o) const
     {
-        return 1/(1+(fabs(x-)^(2*m_b))
+        
+        return 1/(1+(fabs((x-m_c)/m_a)^(2*m_b))
     }
 }
      
