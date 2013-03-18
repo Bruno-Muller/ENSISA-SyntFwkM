@@ -10,7 +10,6 @@
 
 #include "expression.h"
 #include "is.h"
-#include "istriangle.h"
 
 namespace fuzzy
 {
@@ -34,7 +33,7 @@ namespace fuzzy
     }
     
     template <T>
-    T IsTriangle<T>::evaluate(const core::Expression<T>* o) const
+    T IsTrapeze<T>::evaluate(const core::Expression<T>* o) const
     {
         return o->evaluate();
     }
