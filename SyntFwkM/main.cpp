@@ -31,6 +31,11 @@
 #include "expressionfactory.h"
 #include "fuzzyexpressionfactory.h"
 
+#include "andmin.h"
+#include "ormax.h"
+#include "thenmin.h"
+#include "cogdefuzz.h"
+
 void tests() {
     //ASSERT(...);
 }
@@ -41,10 +46,10 @@ int main(int argc, char** argv) {
     
     //Operators
     fuzzy::NotMinus1<int> opNot;
-    //fuzzy::AndMin<int> opAnd;
-    //fuzzy::OrMax<int> opOr;
-    //fuzzy::ThenMin<int> opThen;
-    //fuzzy::CogDefuzz<int> opDefuzz;
+    fuzzy::AndMin<int> opAnd;
+    fuzzy::OrMax<int> opOr;
+    fuzzy::ThenMin<int> opThen;
+    fuzzy::CogDefuzz<int> opDefuzz;
     
     //fuzzy expession factory
     //FuzzyExpressionFactory f(&opNot,&opAnd,&opOr,&opThen,&opOr,&opDefuzz);
