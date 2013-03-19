@@ -12,7 +12,7 @@
 #include "expressionfactory.h"
 #include "is.h"
 #include "unaryshadowexpression.h"
-//#include "binaryshadoweExpression.h"
+#include "binaryshadowExpression.h"
 
 namespace fuzzy {
     
@@ -35,7 +35,7 @@ namespace fuzzy {
         //virtual void ChangeNot(const Not<T>* o);
         //virtual void ChangeIs(const Is<T>* o);
     private:
-        //core::BinaryShadowExpression<T> *m_and, *m_or, *m_then, *m_agg, *m_defuzz, *m_is;
+        core::BinaryShadowExpression<T> *m_and, *m_or, *m_then, *m_agg, *m_defuzz, *m_is;
         core::UnaryShadowExpression<T>* m_not;
        
     };

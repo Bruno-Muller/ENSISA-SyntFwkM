@@ -12,7 +12,7 @@ namespace core {
     };
 
     template <class T>
-    T Expression<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
+    T BinaryExpression<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
     	T l=left->evaluate();
     	T r=right->evaluate();
