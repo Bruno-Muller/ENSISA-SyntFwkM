@@ -13,15 +13,15 @@
 namespace fuzzy
 {
     template <class T>
-    class Mamdanidefuzz : public core::BinaryExpression<T>
+    class MamdaniDefuzz : public core::BinaryExpression<T>
     {
         public:
-            virtual ~Mamdanidefuzz() {};
+            virtual ~MamdaniDefuzz() {};
             virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
     };
     
         template <class T>
-    T Mamdanidefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
+    T MamdaniDefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
         /*TODO*/
     }

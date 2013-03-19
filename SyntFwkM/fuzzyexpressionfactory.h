@@ -10,9 +10,15 @@
 
 #include "expression.h"
 #include "expressionfactory.h"
-#include "is.h"
 #include "unaryshadowexpression.h"
 #include "binaryshadowExpression.h"
+#include "and.h"
+#include "or.h"
+#include "then.h"
+#include "agg.h"
+#include "mamdanidefuzz.h"
+#include "not.h"
+#include "is.h"
 
 namespace fuzzy {
     
@@ -27,13 +33,13 @@ namespace fuzzy {
         virtual core::Expression<T>* NewNot(const core::Expression<T>* o);
         virtual core::Expression<T>* NewIs(const fuzzy::Is<T>* is, const core::Expression<T>* o);
         
-        //virtual void ChangeAnd(const And<T>* o);
-        //virtual void ChangeOr(const Or<T>* o);
-        //virtual void ChangeThen(const Then<T>* o);
-        //virtual void ChangeAgg(const Agg<T>* o);
-        //virtual void ChangeDefuzz(const Defuzz<T>* o);
-        //virtual void ChangeNot(const Not<T>* o);
-        //virtual void ChangeIs(const Is<T>* o);
+        virtual void ChangeAnd(const And<T>* o);
+        virtual void ChangeOr(const Or<T>* o);
+        virtual void ChangeThen(const Then<T>* o);
+        virtual void ChangeAgg(const Agg<T>* o);
+        virtual void ChangeDefuzz(const MamdaniDefuzz<T>* o);
+        virtual void ChangeNot(const Not<T>* o);
+        virtual void ChangeIs(const Is<T>* o);
     private:
         core::BinaryShadowExpression<T> *m_and, *m_or, *m_then, *m_agg, *m_defuzz, *m_is;
         core::UnaryShadowExpression<T>* m_not;
