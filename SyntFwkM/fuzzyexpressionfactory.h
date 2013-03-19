@@ -25,7 +25,7 @@ namespace fuzzy {
     template <class T>
     class FuzzyExpressionFactory : core::ExpressionFactory<T> {
     public:
-        FuzzyExpressionFactory<T>(const Not<T>*, const And<T>, const Or<T>*, const Then<T>*, const MamdaniDefuzz<T>*);
+        FuzzyExpressionFactory<T>(Not<T>*, And<T>, Or<T>*, Then<T>*, Or<T>*, MamdaniDefuzz<T>*);
         virtual core::Expression<T>* NewAnd(const core::Expression<T>* l, const core::Expression<T>* r);
         virtual core::Expression<T>* NewOr(const core::Expression<T>* l, const core::Expression<T>* r);
         virtual core::Expression<T>* NewThen(const core::Expression<T>* l, const core::Expression<T>* r);
@@ -48,7 +48,7 @@ namespace fuzzy {
     };
     
     template <class T>
-    FuzzyExpressionFactory<T>::FuzzyExpressionFactory(const Not<T>* n, const And<T> a, const Or<T>* o, const Then<T>* t, const MamdaniDefuzz<T>* d) :
+    FuzzyExpressionFactory<T>::FuzzyExpressionFactory(Not<T>* n, And<T> a, Or<T>* o, Then<T>* t, Or<T>* o2, MamdaniDefuzz<T>* d) :
         m_not(n),
         m_and(a),
         m_or(o),

@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
     fuzzy::CogDefuzz<int> opDefuzz;
     
     //fuzzy expession factory
-    //FuzzyExpressionFactory f(&opNot,&opAnd,&opOr,&opThen,&opOr,&opDefuzz);
+    //fuzzy::FuzzyExpressionFactory<int> f(&opNot,&opAnd,&opOr,&opThen,&opOr,&opDefuzz);
     
     //membership function
     fuzzy::IsTriangle<int> poor(-5,0,5);

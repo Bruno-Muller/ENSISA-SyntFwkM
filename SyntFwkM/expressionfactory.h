@@ -20,7 +20,7 @@ namespace core {
         virtual Expression<T>* NewUnary(const UnaryExpression<T>* ope, const Expression<T>* o) const;
         virtual Expression<T>* NewBinary(const UnaryExpression<T>* ope, const Expression<T>* l, const Expression<T>* r) const;
     private:
-        Expression<T> m_memory;
+        Expression<T>* m_memory;
     };
 
     template <class T>
