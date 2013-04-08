@@ -4,19 +4,39 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>agg.h</itemPath>
+      <itemPath>aggmax.h</itemPath>
+      <itemPath>aggplus.h</itemPath>
+      <itemPath>and.h</itemPath>
+      <itemPath>andmin.h</itemPath>
+      <itemPath>andmult.h</itemPath>
       <itemPath>assertion.h</itemPath>
       <itemPath>binaryexpression.h</itemPath>
       <itemPath>binaryexpressionmodel.h</itemPath>
+      <itemPath>binaryshadowexpression.h</itemPath>
+      <itemPath>cogdefuzz.h</itemPath>
+      <itemPath>evaluator.h</itemPath>
       <itemPath>expression.h</itemPath>
       <itemPath>expressionfactory.h</itemPath>
       <itemPath>fuzzyexpressionfactory.h</itemPath>
       <itemPath>is.h</itemPath>
+      <itemPath>istrapeze.h</itemPath>
+      <itemPath>istrapezeleft.h</itemPath>
+      <itemPath>istrapezeright.h</itemPath>
       <itemPath>istriangle.h</itemPath>
+      <itemPath>mamdanidefuzz.h</itemPath>
       <itemPath>naryexpression.h</itemPath>
       <itemPath>naryexpressionmodel.h</itemPath>
       <itemPath>naryshadowexpression.h</itemPath>
       <itemPath>not.h</itemPath>
       <itemPath>notminus1.h</itemPath>
+      <itemPath>or.h</itemPath>
+      <itemPath>ormax.h</itemPath>
+      <itemPath>orplus.h</itemPath>
+      <itemPath>sugenothen.h</itemPath>
+      <itemPath>then.h</itemPath>
+      <itemPath>thenmin.h</itemPath>
+      <itemPath>thenmult.h</itemPath>
       <itemPath>unaryexpression.h</itemPath>
       <itemPath>unaryexpressionmodel.h</itemPath>
       <itemPath>unaryshadowexpression.h</itemPath>

@@ -19,6 +19,7 @@ namespace core {
         virtual Expression<T>* Hold(const Expression<T>* e) const;
         virtual Expression<T>* NewUnary(const UnaryExpression<T>* ope, const Expression<T>* o) const;
         virtual Expression<T>* NewBinary(const UnaryExpression<T>* ope, const Expression<T>* l, const Expression<T>* r) const;
+        
     private:
         Expression<T>* m_memory;
     };
@@ -30,7 +31,7 @@ namespace core {
 
     template <class T>
     Expression<T>* ExpressionFactory<T>::NewUnary(const UnaryExpression<T>* ope, const Expression<T>* o) const {
-        return new UnaryExpressionModel<T>(ope, o);
+        return 0; // TODO
     }
 
     template <class T>

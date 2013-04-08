@@ -14,7 +14,7 @@
 namespace core {
     
     template <class T>
-    class BinaryShadowExpression : BinaryExpression<T> {
+    class BinaryShadowExpression : public BinaryExpression<T> {
     public:
         virtual T evaluate(const Expression<T>* l, const Expression<T>* r) const;
     private:

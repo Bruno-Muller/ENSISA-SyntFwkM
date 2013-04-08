@@ -35,6 +35,7 @@
 #include "ormax.h"
 #include "thenmin.h"
 #include "cogdefuzz.h"
+#include "aggmax.h"
 
 void tests() {
     //ASSERT(...);
@@ -50,9 +51,10 @@ int main(int argc, char** argv) {
     fuzzy::OrMax<int> opOr;
     fuzzy::ThenMin<int> opThen;
     fuzzy::CogDefuzz<int> opDefuzz;
+    fuzzy::AggMax<int> opAgg;
     
     //fuzzy expession factory
-    //fuzzy::FuzzyExpressionFactory<int> f(&opNot,&opAnd,&opOr,&opThen,&opOr,&opDefuzz);
+    fuzzy::FuzzyExpressionFactory<int> f(&opNot,&opAnd,&opOr,&opThen,&opAgg,&opDefuzz);
     
     //membership function
     fuzzy::IsTriangle<int> poor(-5,0,5);

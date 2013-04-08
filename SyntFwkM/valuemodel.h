@@ -13,7 +13,7 @@
 namespace core {
 
     template <class T>
-    class ValueModel : Expression<T> {
+    class ValueModel : public Expression<T> {
     public:
         ValueModel(const T& v);
         virtual T evaluate() const;

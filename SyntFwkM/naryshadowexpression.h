@@ -14,7 +14,7 @@
 namespace core {
     
     template <class T>
-    class NaryShadowExpression : NaryExpression<T> {
+    class NaryShadowExpression : public NaryExpression<T> {
     public:
         virtual T evaluate(const Expression<T> operands[]) const;
     private:

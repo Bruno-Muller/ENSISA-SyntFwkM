@@ -14,7 +14,7 @@
 namespace fuzzy
 {
     template <class T>
-    class AggPlus : public Or<T>
+    class AggPlus : public Agg<T>
     {
         public:
             virtual ~AggPlus() {};

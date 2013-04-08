@@ -14,9 +14,9 @@
 namespace core {
 
     template <class T>
-    class UnaryShadowExpression : UnaryExpression<T> {
+    class UnaryShadowExpression : public UnaryExpression<T> {
     public:
-        virtual T evaluate(const Expression<T>* o) const=0;
+        virtual T evaluate(const Expression<T>* o) const;
     private:
         UnaryExpression<T>* m_target;
             
