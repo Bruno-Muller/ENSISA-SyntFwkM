@@ -27,13 +27,13 @@ namespace fuzzy {
     class FuzzyExpressionFactory : core::ExpressionFactory<T> {
     public:
         FuzzyExpressionFactory<T>(Not<T>*, And<T>*, Or<T>*, Then<T>*, Agg<T>*, MamdaniDefuzz<T>*);
-        virtual core::Expression<T>* NewAnd(const core::Expression<T>* l, const core::Expression<T>* r);
-        virtual core::Expression<T>* NewOr(const core::Expression<T>* l, const core::Expression<T>* r);
-        virtual core::Expression<T>* NewThen(const core::Expression<T>* l, const core::Expression<T>* r);
-        virtual core::Expression<T>* NewAgg(const core::Expression<T>* l, const core::Expression<T>* r);
-        virtual core::Expression<T>* NewDefuzz(const core::Expression<T>* l, const core::Expression<T>* r);
-        virtual core::Expression<T>* NewNot(const core::Expression<T>* o);
-        virtual core::Expression<T>* NewIs(const fuzzy::Is<T>* is, const core::Expression<T>* o);
+        virtual core::Expression<T>* NewAnd(core::Expression<T>* l, core::Expression<T>* r);
+        virtual core::Expression<T>* NewOr(core::Expression<T>* l, core::Expression<T>* r);
+        virtual core::Expression<T>* NewThen(core::Expression<T>* l, core::Expression<T>* r);
+        virtual core::Expression<T>* NewAgg(core::Expression<T>* l, core::Expression<T>* r);
+        virtual core::Expression<T>* NewDefuzz(core::Expression<T>* l, core::Expression<T>* r);
+        virtual core::Expression<T>* NewNot(core::Expression<T>* o);
+        virtual core::Expression<T>* NewIs(fuzzy::Is<T>* is, core::Expression<T>* o);
         
         virtual void ChangeAnd(And<T>* o);
         virtual void ChangeOr(Or<T>* o);
@@ -60,37 +60,37 @@ namespace fuzzy {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewAnd(const core::Expression<T>* l, const core::Expression<T>* r)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewAnd(core::Expression<T>* l, core::Expression<T>* r)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewOr(const core::Expression<T>* l, const core::Expression<T>* r)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewOr(core::Expression<T>* l, core::Expression<T>* r)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewThen(const core::Expression<T>* l, const core::Expression<T>* r)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewThen(core::Expression<T>* l, core::Expression<T>* r)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewAgg(const core::Expression<T>* l, const core::Expression<T>* r)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewAgg(core::Expression<T>* l, core::Expression<T>* r)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewDefuzz(const core::Expression<T>* l, const core::Expression<T>* r)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewDefuzz(core::Expression<T>* l, core::Expression<T>* r)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewNot(const core::Expression<T>* o)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewNot(core::Expression<T>* o)
     {
     }
     
     template <class T>
-    core::Expression<T>* FuzzyExpressionFactory<T>::NewIs(const fuzzy::Is<T>* is, const core::Expression<T>* o)
+    core::Expression<T>* FuzzyExpressionFactory<T>::NewIs(fuzzy::Is<T>* is, core::Expression<T>* o)
     {
     }
     

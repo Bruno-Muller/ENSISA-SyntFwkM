@@ -69,23 +69,23 @@ int main(int argc, char** argv) {
     core::ValueModel<int> food(0);
     core::ValueModel<int> tips(0);
     
-    //Expression *r =
-    //        f.NewAgg(
-    //            f.NewAgg(
-    //                    f.NewThen(
-    //                            f.NewIs(&service, &poor),
-    //                            f.NewIs(&tips,&cheap)
-    //                    ),
-    //                    f.NewThen(
-    //                            f.NewIs(&service,&good),
-    //                            f.NewIs(&tips,&average)
-    //                    )
-    //            ),
-    //            f.NewThen(
-    //                    f.NewIs(&service,&excellent),
-    //                    f.NewIs(&tips,&generous)
-    //            )
-    //        );
+    core::Expression<int> *r =
+            f.NewAgg(
+                f.NewAgg(
+                        f.NewThen(
+                                f.NewIs(&service, &poor),
+                                f.NewIs(&tips,&cheap)
+                        ),
+                        f.NewThen(
+                                f.NewIs(&service,&good),
+                                f.NewIs(&tips,&average)
+                        )
+                ),
+                f.NewThen(
+                        f.NewIs(&service,&excellent),
+                        f.NewIs(&tips,&generous)
+                )
+            );
 
     //defuzzification
     //Expression *system = f.NewDefuzz(&tips, r, 0, 25, 1);
