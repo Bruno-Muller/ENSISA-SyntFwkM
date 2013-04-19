@@ -17,26 +17,27 @@ namespace core {
     class ExpressionFactory {
     public:
         virtual Expression<T>* Hold(const Expression<T>* e) const;
-        virtual Expression<T>* NewUnary(const UnaryExpression<T>* ope, const Expression<T>* o) const;
-        virtual Expression<T>* NewBinary(const UnaryExpression<T>* ope, const Expression<T>* l, const Expression<T>* r) const;
-        
+        virtual UnaryExpressionModel<T>* NewUnary(const UnaryExpression<T>* ope = 0, const Expression<T>* o = 0) const;
+        virtual BinaryExpressionModel<T>* NewBinary(const BinaryExpression<T>* ope = 0, const Expression<T>* l = 0, const Expression<T>* r = 0) const;
+
     private:
         Expression<T>* m_memory;
     };
 
     template <class T>
-    Expression<T>* ExpressionFactory<T>::Hold(const Expression<T>* e) const {
-        return 0; // TODO
+    Expression<T>* ExpressionFactory<T>::Hold(Expression<T> *e) {
+        *m_memory = *e;
+        return m_memory;
     }
 
     template <class T>
-    Expression<T>* ExpressionFactory<T>::NewUnary(const UnaryExpression<T>* ope, const Expression<T>* o) const {
-        return 0; // TODO
+    UnaryExpressionModel<T>* ExpressionFactory<T>::NewUnary(UnaryExpression<T>* ope, Expression<T>* o) {
+        return new UnaryExpressionModel<T>(ope, o);
     }
 
     template <class T>
-    Expression<T>* ExpressionFactory<T>::NewBinary(const UnaryExpression<T>* ope, const Expression<T>* l, const Expression<T>* r) const {
-        return 0; // TODO
+    BinaryExpressionModel<T>* ExpressionFactory<T>::NewBinary(BinaryExpression<T>* ope, Expression<T>* l, Expression<T>* r) {
+        return new BinaryExpressionModel<T>(ope, l, r);
     }
 }
 
