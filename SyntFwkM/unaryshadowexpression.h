@@ -16,19 +16,25 @@ namespace core {
     template <class T>
     class UnaryShadowExpression : public UnaryExpression<T> {
     public:
+        UnaryShadowExpression(UnaryExpression<T>* t);
         virtual T evaluate(const Expression<T>* o) const;
     private:
         UnaryExpression<T>* m_target;
-            
-    };  
-    
+
+    };
+
+    template <class T>
+    UnaryShadowExpression<T>::UnaryShadowExpression(UnaryExpression<T>* t) :
+    m_target(t) {
+    }
+
     template <class T>
     T UnaryShadowExpression<T>::evaluate(const Expression<T>* o) const {
-        if (m_target != 0) {
+        if (m_target != 0)
             return m_target->evaluate(o);
-        }
+        return 0;
     }
-    
+
 }
 
 #endif	/* UNARYSHADOWEXPRESSION_H */

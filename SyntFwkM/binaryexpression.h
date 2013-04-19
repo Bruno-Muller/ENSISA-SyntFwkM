@@ -1,9 +1,3 @@
-/* 
- * File:   binaryexpression.h
- * Author: bruno
- *
- */
-
 #ifndef BINARYEXPRESSION_H
 #define	BINARYEXPRESSION_H
 

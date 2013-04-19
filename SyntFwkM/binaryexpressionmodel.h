@@ -1,9 +1,3 @@
-/* 
- * File:   binaryexpressionmodel.h
- * Author: bruno
- *
- */
-
 #ifndef BINARYEXPRESSIONMODEL_H
 #define	BINARYEXPRESSIONMODEL_H
 
@@ -73,12 +67,14 @@ namespace core {
     T BinaryExpressionModel<T>::evalutate() const {
         if (m_left != 0 && m_right != 0)
             return evaluate(m_left, m_right);
+        return 0;
     }
 
     template <class T>
     T BinaryExpressionModel<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const {
         if (m_operator != 0)
             return m_operator->evaluate(l, r);
+        return 0;
     }
 }
 

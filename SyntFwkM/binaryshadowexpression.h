@@ -36,9 +36,9 @@ namespace core {
     
     template <class T>
     T BinaryShadowExpression<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const {
-        if (m_target != 0) {
+        if (m_target != 0)
             return m_target->evaluate(l, r);
-        }
+        return 0;
     }
 
 }
