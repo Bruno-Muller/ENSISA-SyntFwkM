@@ -20,6 +20,7 @@
       <itemPath>expressionfactory.h</itemPath>
       <itemPath>fuzzyexpressionfactory.h</itemPath>
       <itemPath>is.h</itemPath>
+      <itemPath>isbell.h</itemPath>
       <itemPath>istrapeze.h</itemPath>
       <itemPath>istrapezeleft.h</itemPath>
       <itemPath>istrapezeright.h</itemPath>

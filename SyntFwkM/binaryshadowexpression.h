@@ -12,14 +12,27 @@
 #include "binaryexpression.h"
 
 namespace core {
-    
+
     template <class T>
     class BinaryShadowExpression : public BinaryExpression<T> {
     public:
+        BinaryShadowExpression(BinaryExpression<T>*);
+        //virtual void takeTarget(BinaryExpression<T>*);
         virtual T evaluate(const Expression<T>* l, const Expression<T>* r) const;
     private:
         BinaryExpression<T>* m_target;
     };
+
+    template <class T>
+    BinaryShadowExpression<T>::BinaryShadowExpression(BinaryExpression<T>* target) :
+    m_target(target) {
+    }
+
+    /*
+    template <class T>
+    void BinaryShadowExpression<T>::takeTarget(BinaryExpression<T>*) {
+    }
+    */
     
     template <class T>
     T BinaryShadowExpression<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const {
@@ -27,8 +40,7 @@ namespace core {
             return m_target->evaluate(l, r);
         }
     }
-    
-    
+
 }
 
 #endif	/* BINARYSHADOWEXPRESSION_H */

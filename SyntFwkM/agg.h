@@ -8,6 +8,7 @@
 #ifndef AGG_H
 #define	AGG_H
 
+#include "expression.h"
 #include "binaryexpression.h"
 
 namespace fuzzy
@@ -16,6 +17,7 @@ namespace fuzzy
     class Agg : public core::BinaryExpression<T>
     {
         public:
+            virtual T evaluate(core::Expression<T>*,core::Expression<T>*) const=0;
             virtual ~Agg() {};
     };
 }

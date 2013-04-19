@@ -16,6 +16,7 @@ namespace fuzzy
     class And : public core::BinaryExpression<T> 
     {
         public:
+            virtual T evaluate(core::Expression<T>*, core::Expression<T>*) const=0;
             virtual ~And() {};
     };
 }
