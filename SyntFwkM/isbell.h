@@ -1,3 +1,4 @@
+
 /* 
  * File:   isbell.h
  * Author: CHEVALIER Simon 2A-IR ENSISA <simon.cvr@gmail.com>
@@ -35,11 +36,10 @@ namespace fuzzy
     template<class T>
     T IsBell<T>::evaluate(const core::Expression<T>* o) const
     {
-        
-        return 1/(1+(fabs((x-m_c)/m_a)^(2*m_b))
+        T x = o->evaluate();
+        return 1/(1+(fabs((x-m_c)/m_a)^(2*m_b)));
     }
 }
      
 
 #endif	/* ISBELL_H */
-
