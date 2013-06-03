@@ -8,6 +8,7 @@
 #ifndef BINARYSHADOWEXPRESSION_H
 #define	BINARYSHADOWEXPRESSION_H
 
+#include <exception>
 #include "expression.h"
 #include "binaryexpression.h"
 
@@ -17,7 +18,10 @@ namespace core {
     class BinaryShadowExpression : public BinaryExpression<T> {
     public:
         BinaryShadowExpression(BinaryExpression<T>*);
-        //virtual void takeTarget(BinaryExpression<T>*);
+        virtual ~BinaryShadowExpression() {};
+        
+        void setTarget(BinaryExpression<T> *t);
+        BinaryExpression<T>* getTarget();
         virtual T evaluate(const Expression<T>* l, const Expression<T>* r) const;
     private:
         BinaryExpression<T>* m_target;
@@ -28,17 +32,23 @@ namespace core {
     m_target(target) {
     }
 
-    /*
+    
     template <class T>
-    void BinaryShadowExpression<T>::takeTarget(BinaryExpression<T>*) {
+    void BinaryShadowExpression<T>::setTarget(BinaryExpression<T>* t) {
+        this->m_target = t;
     }
-    */
+    
+    template <class T>
+    BinaryExpression<T>* BinaryShadowExpression<T>::getTarget() {
+        return this->m_target;
+    }
     
     template <class T>
     T BinaryShadowExpression<T>::evaluate(const Expression<T>* l, const Expression<T>* r) const {
         if (m_target != 0)
             return m_target->evaluate(l, r);
-        return 0;
+        
+        throw(std::exception());
     }
 
 }

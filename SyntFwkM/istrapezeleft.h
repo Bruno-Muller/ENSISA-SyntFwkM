@@ -17,15 +17,16 @@ namespace fuzzy
     class IsTrapezeLeft : public fuzzy::Is<T>
     {
         public :
-            IsTrapezeLeft(const T& min, const T& max);
+            IsTrapezeLeft(const T& min, const T& midMax, const T& max);
             virtual T evaluate(const core::Expression<T>* o) const;
         private :
-            T m_min, m_max;
+            T m_min, m_midMax, m_max;
     };
     
     template <class T>
-    IsTrapezeLeft<T>::IsTrapezeLeft(const T& min, const T& max):
+    IsTrapezeLeft<T>::IsTrapezeLeft(const T& min, const T& midMax, const T& max):
         m_min(min),
+        m_midMax(midMax),
         m_max(max)
     {
     }
@@ -33,7 +34,17 @@ namespace fuzzy
     template <T>
     T IsTrapezeLeft<T>::evaluate(const core::Expression<T>* o) const
     {
-        return o->evaluate();
+        T v = o->evaluate();
+        
+        if (v <= m_min || v >= m_max)
+                return 0;
+        
+        if (v <= m_midMax)
+            return 1;
+        
+        if (v > m_midMax)
+            return (m_midMax - m_max) / (v - m_max); 
+        
     }
 }
 

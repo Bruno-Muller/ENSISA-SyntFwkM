@@ -8,6 +8,7 @@
 #ifndef NARYEXPRESSION_H
 #define	NARYEXPRESSION_H
 
+#include <vector>
 #include "expression.h"
 
 namespace core {
@@ -15,7 +16,7 @@ namespace core {
     template <class T>
     class NaryExpression {
     public:
-        virtual T evaluate(const Expression<T> operands[]) const=0;
+        virtual T evaluate(std::vector<const Expression<T>*> *o) const=0;
     };  
     
 }

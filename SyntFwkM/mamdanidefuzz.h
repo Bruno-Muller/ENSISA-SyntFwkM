@@ -10,20 +10,30 @@
 
 #include "binaryexpression.h"
 
-namespace fuzzy
-{
+namespace fuzzy {
+
     template <class T>
-    class MamdaniDefuzz : public core::BinaryExpression<T>
-    {
-        public:
-            virtual ~MamdaniDefuzz() {};
-            virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
+    class MamdaniDefuzz : public core::BinaryExpression<T> {
+    public:
+        MamdaniDefuzz(T min, T max, T step);
+
+        virtual ~MamdaniDefuzz() {
+        };
+        virtual T evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
+
+    private:
+        T m_max, m_min, m_step;
+
     };
-    
-        template <class T>
-    T MamdaniDefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
-    {
-        /*TODO*/
+
+    template<class T>
+    MamdaniDefuzz<T>::MamdaniDefuzz(T min, T max, T step) : m_min(min), m_max(max), m_step(step) {
+    }
+
+    template <class T>
+    T MamdaniDefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const {
+        
+        
     }
 }
 

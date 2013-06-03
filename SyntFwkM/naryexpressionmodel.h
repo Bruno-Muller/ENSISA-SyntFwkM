@@ -8,6 +8,7 @@
 #ifndef NARYEXPRESSIONMODEL_H
 #define	NARYEXPRESSIONMODEL_H
 
+#include <exception>
 #include "expression.h"
 #include "naryexpression.h"
 
@@ -16,24 +17,36 @@ namespace core {
     template <class T>
     class NaryExpressionModel : public Expression<T>, public NaryExpression<T> {
     public:
+        NaryExpressionModel(std::vector<const Expression<T>*> *operands, NaryExpression<T>* op);
+        virtual ~NaryExpressionModel() {};
+        
         virtual T evalutate() const;
-        virtual T evaluate(const Expression<T> operands[]) const;
+        virtual T evaluate(std::vector<const Expression<T>*> *operands) const;
 
     private:
         NaryExpression<T>* m_operator;
-        Expression<T>* m_operands[];
+        std::vector<const Expression<T>*> *m_operands;
     };
+    
+    template <class T>
+    NaryExpressionModel<T>::NaryExpressionModel(std::vector<const Expression<T>*> *operands, NaryExpression<T>* op) : m_operands(operands), m_operator(op)
+    {
+    }
 
     template <class T>
     T NaryExpressionModel<T>::evalutate() const {
         if (m_operands != 0)
             return evaluate(m_operands);
+        
+        throw(std::exception());
     }
 
     template <class T>
-    T NaryExpressionModel<T>::evaluate(const Expression<T> operands[]) const {
+    T NaryExpressionModel<T>::evaluate(std::vector<const Expression<T>*> *operands) const {
         if (m_operator != 0)
             return m_operator->evaluate(operands);
+        
+        throw(std::exception());
     }
 
 }

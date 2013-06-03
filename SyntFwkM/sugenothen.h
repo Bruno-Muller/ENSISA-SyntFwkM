@@ -14,10 +14,11 @@
 namespace fuzzy
 {
     template <class T>
-    class ThenMult : public Then<T>
+    class SugenoThen : public Then<T>
     {
         public:
-            virtual ~ThenMult() {};
+            SugenoThen();
+            virtual ~SugenoThen();
             virtual T evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
             virtual T premiseValue();
         private:
@@ -26,15 +27,21 @@ namespace fuzzy
     };
     
     template <class T>
-    T ThenMult<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
+    SugenoThen<T>::SugenoThen() : premiseValue(0)
     {
-        //TODO
     }
     
     template <class T>
-    T ThenMult<T>::premiseValue
+    T SugenoThen<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
-        //TODO
+        this->premiseValue = left->evaluate();
+        return this->premiseValue * right->evaluate();
+    }
+    
+    template <class T>
+    T SugenoThen<T>::premiseValue()
+    {
+        return this->premiseValue;
     }
 }
 

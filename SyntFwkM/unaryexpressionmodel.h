@@ -8,15 +8,17 @@
 #ifndef UNARYEXPRESSIONMODEL_H
 #define	UNARYEXPRESSIONMODEL_H
 
+#include <exception>
 #include "expression.h"
 #include "unaryexpression.h"
 
 namespace core {
 
     template <class T>
-    class UnaryExpressionModel : Expression<T>, UnaryExpression<T> {
+    class UnaryExpressionModel : public Expression<T>, public UnaryExpression<T> {
     public:
-        UnaryExpressionModel(UnaryExpression<T>* = 0, Expression<T>* = 0);
+        UnaryExpressionModel(UnaryExpression<T>*, Expression<T>*);
+        virtual ~UnaryExpressionModel() {};
 
         virtual T evalutate() const;
         virtual T evaluate(const Expression<T>* o) const;
@@ -40,36 +42,22 @@ namespace core {
     T UnaryExpressionModel<T>::evalutate() const {
         if (m_operand != 0)
             return evaluate(m_operand);
-        return 0;
+        
+        throw(std::exception());
     }
 
     template <class T>
     T UnaryExpressionModel<T>::evaluate(const Expression<T>* o) const {
         if (m_operator != 0)
             return m_operator->evaluate(o);
-        return 0;
+        
+        throw(std::exception());
     }
 
     template <class T>
     UnaryExpression<T>* UnaryExpressionModel<T>::GetOperator() {
         return m_operator;
     }
-
-    template <class T>
-    Expression<T>* UnaryExpressionModel<T>::GetOperand() {
-        return m_operand;
-    }
-
-    template <class T>
-    void UnaryExpressionModel<T>::SetOperator(UnaryExpression<T>* op) {
-        m_operator = *op;
-    }
-
-    template <class T>
-    void UnaryExpressionModel<T>::SetOperand(Expression<T>* operand) {
-        m_operand = *operand;
-    }
-
 }
 
 #endif	/* UNARYEXPRESSIONMODEL_H */
