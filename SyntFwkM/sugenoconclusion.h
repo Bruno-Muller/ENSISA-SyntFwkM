@@ -31,8 +31,8 @@ namespace fuzzy {
     template<class T>
     T SugenoConclusion <T>::evaluate(std::vector<core::Expression<T>*>* operands) const
     {
-        std::vector<T>::const_iterator iteratorCoef = this->m_coef->begin(); // typename ?
-        std::vector<const core::Expression<T>*>::const_iterator iteratorExpr = operands->begin(); //typename ?
+        typename std::vector<T>::const_iterator iteratorCoef = this->m_coef->begin();
+        typename std::vector<const core::Expression<T>*>::const_iterator iteratorExpr = operands->begin();
         T result = 0;
         
         for(iteratorExpr = this->m_coef->begin(); iteratorExpr != operands->end() && iteratorCoef != this->m_coef->end(); iteratorExpr++, iteratorCoef++) {
