@@ -20,7 +20,7 @@ namespace core {
         UnaryExpressionModel(UnaryExpression<T>*, Expression<T>*);
         virtual ~UnaryExpressionModel() {};
 
-        virtual T evalutate() const;
+        virtual T evaluate() const;
         virtual T evaluate(const Expression<T>* o) const;
 
         UnaryExpression<T>* GetOperator();
@@ -39,7 +39,7 @@ namespace core {
     }
 
     template <class T>
-    T UnaryExpressionModel<T>::evalutate() const {
+    T UnaryExpressionModel<T>::evaluate() const {
         if (m_operand != 0)
             return evaluate(m_operand);
         

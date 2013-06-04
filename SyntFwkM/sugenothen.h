@@ -18,30 +18,30 @@ namespace fuzzy
     {
         public:
             SugenoThen();
-            virtual ~SugenoThen();
+            virtual ~SugenoThen() {};
             virtual T evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
             virtual T premiseValue();
         private:
-            const T premiseValue; 
+            mutable T m_premiseValue; 
                 
     };
     
     template <class T>
-    SugenoThen<T>::SugenoThen() : premiseValue(0)
+    SugenoThen<T>::SugenoThen() : m_premiseValue(0)
     {
     }
     
     template <class T>
     T SugenoThen<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
     {
-        this->premiseValue = left->evaluate();
-        return this->premiseValue * right->evaluate();
+        this->m_premiseValue = left->evaluate();
+        return this->m_premiseValue * right->evaluate();
     }
     
     template <class T>
     T SugenoThen<T>::premiseValue()
     {
-        return this->premiseValue;
+        return this->m_premiseValue;
     }
 }
 

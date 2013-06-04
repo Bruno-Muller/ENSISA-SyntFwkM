@@ -10,6 +10,7 @@
 
 #include "expression.h"
 #include "mamdanidefuzz.h"
+#include "evaluator.h"
 
 namespace fuzzy
 {
@@ -17,14 +18,31 @@ namespace fuzzy
     class CogDefuzz : public MamdaniDefuzz<T>
     {
         public:
+            CogDefuzz(const T& min, const T& max, const T& step);
             virtual ~CogDefuzz() {};        
-            virtual T  evaluate(const core::Expression<T>*, const core::Expression<T>*)const;
+            
+            virtual T defuzz(const typename core::Evaluator<T>::Shape&) const;
     };
     
     template <class T>
-    T CogDefuzz<T>::evaluate(const core::Expression<T>* left, const core::Expression<T>* right) const
+    CogDefuzz<T>::CogDefuzz(const T& min, const T& max, const T& step) : MamdaniDefuzz<T>(min, max, step)
     {
-        /*TODO*/
+    }
+    
+    
+    template <class T>
+    T CogDefuzz<T>::defuzz(const typename core::Evaluator<T>::Shape& s) const
+    {
+        T x, y, numerator=0, denominator=0;
+        for (int i = 0; i<(s.first.size()-1); i++) {
+            
+            x = s.first.at(i);
+            y = s.second.at(i);
+            numerator += x * y;
+            denominator += y;
+        }
+        
+        return numerator / denominator;
     }
 }
 

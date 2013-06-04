@@ -17,7 +17,7 @@ namespace fuzzy
     class Agg : public core::BinaryExpression<T>
     {
         public:
-            virtual T evaluate(core::Expression<T>*,core::Expression<T>*) const=0;
+            virtual T evaluate(const core::Expression<T>*,const core::Expression<T>*) const=0;
             virtual ~Agg() {};
     };
 }

@@ -26,6 +26,9 @@
 #include "is.h"
 #include "agg.h"
 #include "naryexpression.h"
+#include "mamdanidefuzz.h"
+#include "sugenoconclusion.h"
+#include "sugenodefuzz.h"
 
 namespace fuzzy {
 
@@ -69,53 +72,53 @@ namespace fuzzy {
     m_then(new core::BinaryShadowExpression<T>(t)),
     m_agg(new core::BinaryShadowExpression<T>(g)),
     m_mamdani(new core::BinaryShadowExpression<T>(md)),
-    m_mamdani(new core::NaryShadowExpression<T>(sd)),
-    m_mamdani(new core::NaryShadowExpression<T>(sc)) {
+    m_sugeno(new core::NaryShadowExpression<T>(sd)),
+    m_conclusion(new core::NaryShadowExpression<T>(sc)) {
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newAnd(core::Expression<T>* l, core::Expression<T>* r) {
-        return new core::BinaryExpressionModel(m_and, l, r);
+        return new core::BinaryExpressionModel<T>(m_and, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newOr(core::Expression<T>* l, core::Expression<T>* r) {
-        return new core::BinaryExpressionModel(m_or, l, r);
+        return new core::BinaryExpressionModel<T>(m_or, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newThen(core::Expression<T>* l, core::Expression<T>* r) {
-        return new core::BinaryExpressionModel(m_then, l, r);
+        return new core::BinaryExpressionModel<T>(m_then, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newAgg(core::Expression<T>* l, core::Expression<T>* r) {
-        return new core::BinaryExpressionModel(m_agg, l, r);
+        return new core::BinaryExpressionModel<T>(m_agg, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newMamdani(core::Expression<T>* l, core::Expression<T>* r) {
-        return new core::BinaryExpressionModel(m_mamdani, l, r);
+        return new core::BinaryExpressionModel<T>(m_mamdani, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newNot(core::Expression<T>* o) {
-        return new core::UnaryExpressionModel(m_not, o);
+        return new core::UnaryExpressionModel<T>(m_not, o);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newIs(fuzzy::Is<T>* is, core::Expression<T>* o) {
-        return new core::UnaryExpressionModel(m_is, o);
+        return new core::UnaryExpressionModel<T>(m_is, o);
     }
 
     template <class T>
     core::Expression<T>* FuzzyExpressionFactory<T>::newSugeno(std::vector<const core::Expression<T>*> *o) {
-        return new core::NaryExpressionModel(o, m_sugeno);
+        return new core::NaryExpressionModel<T>(o, m_sugeno);
     }
 
     template <class T>
-    virtual core::Expression<T>* FuzzyExpressionFactory<T>::newConclusion(std::vector<const core::Expression<T>*> *o) {
-        return core::NaryExpressionModel(o, m_conclusion);
+    core::Expression<T>* FuzzyExpressionFactory<T>::newConclusion(std::vector<const core::Expression<T>*> *o) {
+        return new core::NaryExpressionModel<T>(o, m_conclusion);
     }
 
     template <class T>

@@ -9,8 +9,12 @@
 #define	EXPRESSIONFACTORY_H
 
 #include <set>
+#include <vector>
 #include "expression.h"
 #include "unaryexpression.h"
+#include "naryexpression.h"
+#include "naryexpressionmodel.h"
+
 #include "is.h"
 
 namespace core {
@@ -62,7 +66,7 @@ namespace core {
     }
     
     template <class T>
-    BinaryExpressionModel<T>* ExpressionFactory<T>::newNary(NaryExpression<T>* ope, std::vector<Expression<T>*> o) {
+    NaryExpressionModel<T>* ExpressionFactory<T>::newNary(NaryExpression<T>* ope, std::vector<Expression<T>*> o) {
         return new NaryExpressionModel<T>(ope, o);
     }
 }

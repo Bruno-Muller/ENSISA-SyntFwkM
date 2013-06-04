@@ -21,12 +21,12 @@ namespace core {
     public:
         typedef std::pair<std::vector<T>, std::vector<T> > Shape;
 
-        static Shape buildShape(const T &min, const T &max, const T &step, core::Expression<T> *e, core::ValueModel<T> *v);
+        static Shape buildShape(const T &min, const T &max, const T &step, const core::Expression<T> *e, core::ValueModel<T> *v);
         static std::ostream& printShape(const Shape &shape, std::ostream& os);
     };
 
     template <class T>
-    typename Evaluator<T>::Shape Evaluator<T>::buildShape(const T &min, const T &max, const T &step, core::Expression<T> *e, core::ValueModel<T> *v) {
+    typename Evaluator<T>::Shape Evaluator<T>::buildShape(const T &min, const T &max, const T &step, const core::Expression<T> *e, core::ValueModel<T> *v) {
         
         typename Evaluator<T>::Shape shape;
         

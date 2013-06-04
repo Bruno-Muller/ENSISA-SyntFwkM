@@ -15,7 +15,7 @@ namespace core {
  
         virtual BinaryExpression<T>* getOperator();
 
-        virtual T evalutate() const;
+        virtual T evaluate() const;
         virtual T evaluate(const Expression<T>* l, const Expression<T>* r) const;
 
     private:
@@ -35,7 +35,7 @@ namespace core {
     }
 
     template <class T>
-    T BinaryExpressionModel<T>::evalutate() const {
+    T BinaryExpressionModel<T>::evaluate() const {
         if (m_left != 0 && m_right != 0)
             return evaluate(m_left, m_right);
         

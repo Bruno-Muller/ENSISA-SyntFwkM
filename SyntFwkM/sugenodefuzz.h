@@ -13,6 +13,7 @@
 #include "expression.h"
 #include "binaryexpressionmodel.h"
 #include "binaryshadowexpression.h"
+#include "naryexpression.h"
 #include "sugenothen.h"
 
 namespace fuzzy {

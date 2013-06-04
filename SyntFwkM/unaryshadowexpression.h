@@ -20,7 +20,7 @@ namespace core {
         UnaryShadowExpression(UnaryExpression<T>* t);
         virtual ~UnaryShadowExpression() {};
         
-        void setTarget(const Expression<T>* o) const;
+        void setTarget(UnaryExpression<T>* t);
         virtual T evaluate(const Expression<T>* o) const;
     private:
         UnaryExpression<T>* m_target;

@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="84">
+<configurationDescriptor version="88">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>agg.h</itemPath>
-      <itemPath>aggmax.h</itemPath>
-      <itemPath>aggplus.h</itemPath>
-      <itemPath>and.h</itemPath>
-      <itemPath>andmin.h</itemPath>
-      <itemPath>andmult.h</itemPath>
+      <logicalFolder name="f2" displayName="core" projectFiles="true">
+        <itemPath>binaryexpression.h</itemPath>
+        <itemPath>binaryexpressionmodel.h</itemPath>
+        <itemPath>binaryshadowexpression.h</itemPath>
+        <itemPath>evaluator.h</itemPath>
+        <itemPath>expression.h</itemPath>
+        <itemPath>expressionfactory.h</itemPath>
+        <itemPath>naryexpression.h</itemPath>
+        <itemPath>naryexpressionmodel.h</itemPath>
+        <itemPath>naryshadowexpression.h</itemPath>
+        <itemPath>unaryexpression.h</itemPath>
+        <itemPath>unaryexpressionmodel.h</itemPath>
+        <itemPath>unaryshadowexpression.h</itemPath>
+        <itemPath>valuemodel.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="fuzzy" projectFiles="true">
+        <itemPath>agg.h</itemPath>
+        <itemPath>aggmax.h</itemPath>
+        <itemPath>aggplus.h</itemPath>
+        <itemPath>and.h</itemPath>
+        <itemPath>andmin.h</itemPath>
+        <itemPath>andmult.h</itemPath>
+        <itemPath>cogdefuzz.h</itemPath>
+        <itemPath>fuzzyexpressionfactory.h</itemPath>
+        <itemPath>is.h</itemPath>
+        <itemPath>isbell.h</itemPath>
+        <itemPath>isgaussian.h</itemPath>
+        <itemPath>istrapeze.h</itemPath>
+        <itemPath>istrapezeleft.h</itemPath>
+        <itemPath>istrapezeright.h</itemPath>
+        <itemPath>istriangle.h</itemPath>
+        <itemPath>mamdanidefuzz.h</itemPath>
+        <itemPath>not.h</itemPath>
+        <itemPath>notminus1.h</itemPath>
+        <itemPath>or.h</itemPath>
+        <itemPath>ormax.h</itemPath>
+        <itemPath>orplus.h</itemPath>
+        <itemPath>sugenoconclusion.h</itemPath>
+        <itemPath>sugenodefuzz.h</itemPath>
+        <itemPath>sugenothen.h</itemPath>
+        <itemPath>then.h</itemPath>
+        <itemPath>thenmin.h</itemPath>
+        <itemPath>thenmult.h</itemPath>
+      </logicalFolder>
       <itemPath>assertion.h</itemPath>
-      <itemPath>binaryexpression.h</itemPath>
-      <itemPath>binaryexpressionmodel.h</itemPath>
-      <itemPath>binaryshadowexpression.h</itemPath>
-      <itemPath>cogdefuzz.h</itemPath>
-      <itemPath>evaluator.h</itemPath>
-      <itemPath>expression.h</itemPath>
-      <itemPath>expressionfactory.h</itemPath>
-      <itemPath>fuzzyexpressionfactory.h</itemPath>
-      <itemPath>is.h</itemPath>
-      <itemPath>isbell.h</itemPath>
-      <itemPath>istrapeze.h</itemPath>
-      <itemPath>istrapezeleft.h</itemPath>
-      <itemPath>istrapezeright.h</itemPath>
-      <itemPath>istriangle.h</itemPath>
-      <itemPath>mamdanidefuzz.h</itemPath>
-      <itemPath>naryexpression.h</itemPath>
-      <itemPath>naryexpressionmodel.h</itemPath>
-      <itemPath>naryshadowexpression.h</itemPath>
-      <itemPath>not.h</itemPath>
-      <itemPath>notminus1.h</itemPath>
-      <itemPath>or.h</itemPath>
-      <itemPath>ormax.h</itemPath>
-      <itemPath>orplus.h</itemPath>
-      <itemPath>sugenothen.h</itemPath>
-      <itemPath>then.h</itemPath>
-      <itemPath>thenmin.h</itemPath>
-      <itemPath>thenmult.h</itemPath>
-      <itemPath>unaryexpression.h</itemPath>
-      <itemPath>unaryexpressionmodel.h</itemPath>
-      <itemPath>unaryshadowexpression.h</itemPath>
-      <itemPath>valuemodel.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -73,6 +80,90 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="agg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aggmax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aggplus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="and.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="andmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="andmult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="assertion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cogdefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="evaluator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expressionfactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="fuzzyexpressionfactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="is.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="isbell.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="isgaussian.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapeze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapezeleft.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapezeright.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istriangle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mamdanidefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="not.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="notminus1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="or.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ormax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="orplus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenoconclusion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenodefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenothen.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="then.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thenmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thenmult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="valuemodel.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -93,6 +184,90 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="agg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aggmax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aggplus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="and.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="andmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="andmult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="assertion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="binaryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cogdefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="evaluator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expressionfactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="fuzzyexpressionfactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="is.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="isbell.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="isgaussian.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapeze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapezeleft.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istrapezeright.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="istriangle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mamdanidefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="naryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="not.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="notminus1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="or.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ormax.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="orplus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenoconclusion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenodefuzz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sugenothen.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="then.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thenmin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="thenmult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryexpressionmodel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unaryshadowexpression.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="valuemodel.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>
