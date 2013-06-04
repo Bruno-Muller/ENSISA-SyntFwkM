@@ -33,7 +33,6 @@ namespace fuzzy {
         // numérateur : calcule la somme  
         for(iterator = operands->begin(); iterator != operands->end(); iterator++) {
             numerator += (*iterator)->evaluate();
-            iterator++;
         }
         
         for(iterator = operands->begin(); iterator != operands->end(); iterator++) {

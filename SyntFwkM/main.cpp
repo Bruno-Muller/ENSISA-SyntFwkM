@@ -172,7 +172,8 @@ void test_mamdani() {
 	{
 		std::cout << "service : ";std::cin >> s;
 		service.setValue(s);
-		std::cout << "tips -> " << system->evaluate() << std::endl << "shape :" << std::endl;
+		std::cout << "tips -> " << system->evaluate() << std::endl;
+                //std::cout << "shape :" << std::endl;
                 //core::Evaluator<float>::Shape ss = core::Evaluator<float>::buildShape(5, 25, 1, expr1, &service);
                 //core::Evaluator<float>::printShape(ss, std::cout);
 	}
@@ -276,7 +277,7 @@ int main(int argc, char** argv) {
 
     tests(); // lance les tests
     test_mamdani();
-    //test_sugeno();
+    test_sugeno();
     
     return 0;
 }

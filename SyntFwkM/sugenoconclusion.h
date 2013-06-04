@@ -40,6 +40,7 @@ namespace fuzzy {
             result += *iteratorCoef * eval;
         }
         
+        // Si les 2 vectors n'avaient pas le même nombre d'élements.
         if (iteratorExpr != operands->end()) 
             throw(std::exception());
         
